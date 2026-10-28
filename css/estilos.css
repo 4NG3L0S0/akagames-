@@ -1,0 +1,219 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fondo: #130a24;
+  --tarjeta: #241342;
+  --borde: #5929b1;
+  --boton: #6a25d2;
+  --boton-hover: #8238ed;
+  --texto: #ffffff;
+  --texto-suave: #c9bde6;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.encabezado {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+}
+
+.encabezado h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.volver {
+  font-size: 3rem;
+  line-height: 1;
+  padding-bottom: 6px;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+}
+
+.menu a {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.menu a:hover {
+  background-color: var(--tarjeta);
+}
+
+.menu a.activo {
+  background-color: var(--boton);
+  color: var(--texto);
+}
+
+.menu span {
+  display: inline-block;
+  min-width: 20px;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.18);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+
+main {
+  padding: 8px 24px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+}
+
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.caja-img {
+  position: relative;
+  background-color: var(--tarjeta);
+  border: 3px solid var(--borde);
+  border-radius: 22px;
+  padding: 8px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+
+.caja-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  display: block;
+}
+
+
+.btn-fav {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(19, 10, 36, 0.75);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.btn-fav:hover {
+  transform: scale(1.1);
+}
+
+.precio {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding-left: 6px;
+  color: var(--texto);
+}
+
+
+.btn-comprar {
+  background-color: var(--boton);
+  color: var(--texto);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-comprar:hover {
+  background-color: var(--boton-hover);
+}
+
+.btn-comprar:active {
+  transform: scale(0.98);
+}
+
+.barra-total {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  background-color: #170d2a;
+  border-top: 2px solid var(--borde);
+}
+
+.barra-total p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.btn-pagar {
+  background-color: var(--boton);
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-pagar:hover {
+  background-color: var(--boton-hover);
+}
+
+
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 200;
+  transform: translate(-50%, 80px);
